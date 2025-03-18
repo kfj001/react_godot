@@ -75,6 +75,7 @@ script = ExtResource("2_6twid")
 target_mesh = NodePath("../MeshInstance3D")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
 
 [connection signal="request_completed" from="HTTPRequest" to="HTTPRequest" method="_on_done"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
