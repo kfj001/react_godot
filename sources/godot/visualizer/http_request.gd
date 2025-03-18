@@ -10,4 +10,5 @@ func _ready() -> void:
 
 func _on_done(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	var remoteObj = JSON.parse_string(body.get_string_from_utf8())
-	target_mesh.create_polygon_from_csv(remoteObj)
+	if remoteObj != null:
+		target_mesh.create_polygon_from_csv(remoteObj)

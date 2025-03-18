@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvs8frljme065"]
+[gd_scene load_steps=9 format=3 uid="uid://bvs8frljme065"]
 
+[ext_resource type="Script" uid="uid://cm20j37f6fwfc" path="res://scene_root.gd" id="1_4s7c2"]
 [ext_resource type="Script" uid="uid://pjuev838jdno" path="res://mesh_instance_3d.gd" id="1_w2g3p"]
 [ext_resource type="Script" uid="uid://dnjpb7ifjmgs" path="res://http_request.gd" id="2_6twid"]
 
@@ -49,6 +50,7 @@ _data = {
 }
 
 [node name="SceneRoot" type="Node3D"]
+script = ExtResource("1_4s7c2")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.44803)
@@ -72,4 +74,7 @@ use_threads = true
 script = ExtResource("2_6twid")
 target_mesh = NodePath("../MeshInstance3D")
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="request_completed" from="HTTPRequest" to="HTTPRequest" method="_on_done"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

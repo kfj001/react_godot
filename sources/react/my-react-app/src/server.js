@@ -5,9 +5,9 @@ const app = express();
 const port = 3001; // The API port
 
 const generateSphere = function () {
-    const _rings = 3;
-    const _radialSegments = 3;
-    const _radius = .4;
+    const _rings = 600;
+    const _radialSegments = 600;
+    const _radius = 1;
 
     // Vertex indices.
     var thisRow = 0;
